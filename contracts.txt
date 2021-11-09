@@ -1,4 +1,4 @@
-Signatures:[Samuil Donchev, Patricia Salinas]
+Signatures:[Samuil Donchev, Patricia Salinas, Alan Huerta Magdaleno]
 CS 225 Data Structures 
 Team Contract (jcampo37-ahuert30-psalin2-samuild2) Communication 
 1. Team Meetings: Our team will meet once a week every Thursday from 5-7 PM at the Grainger Engineering Library. We will also try to work during Thanksgiving break. Notes will be stored on a Google document, time-stamped for each meeting. The note-taker is also responsible for drafting the weekly DEVELOPMENT LOG entry, which is approved by the team at the start of the following week’s meeting. 
