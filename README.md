@@ -98,7 +98,6 @@ Alan Huerta - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://l
 Patricia Salinas - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) - jcampo37@illinois.edu
 Samuil Donchev - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) - jcampo37@illinois.edu
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
