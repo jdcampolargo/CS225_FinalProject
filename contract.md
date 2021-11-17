@@ -1,4 +1,4 @@
-Signatures:[Samuil Donchev, Patricia Salinas, Alan Huerta Magdaleno]
+Signatures:[Samuil Donchev, Patricia Salinas, Alan Huerta Magdaleno, Juan David Campolargo]
 CS 225 Data Structures 
 Team Contract (jcampo37-ahuert30-psalin2-samuild2) Communication 
 1. Team Meetings: Our team will meet once a week every Thursday from 5-7 PM at the Grainger Engineering Library. We will also try to work during Thanksgiving break. Notes will be stored on a Google document, time-stamped for each meeting. The note-taker is also responsible for drafting the weekly DEVELOPMENT LOG entry, which is approved by the team at the start of the following week’s meeting. 
@@ -11,5 +11,3 @@ However if a team member is habitually not completing their tasks, they may be a
 3. Conflict Resolution: All conflicts within the team will be decided through rock-paper-scissors. The competition will be played in the following format: All matches are best-of-three, with the upper bracket team having a one game advantage. Each team is allowed one tactical pause of up to five minutes per game. Each team is allowed to pause the game for no more than three times per series.
 
 
-If this was an MD file, each of us would sign our names here at the bottom with an electronic signature and a separate GitHub commit over the same document. 
-1
