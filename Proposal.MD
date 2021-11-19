@@ -14,6 +14,8 @@ By the end of the project, we will have completed Dijkstra’s Algorithm, using 
 
 We will also implement the PageRank algorithm in order to determine the most popular airport, where popular means most traffic. The inputs for this algorithm will be a graph of the airports, which will be used to determine the most popular airport. The output will be a dictionary that holds an airport and its popularity value. The time complexity of this algorithm should be O(V + M) where V is the number of nodes and M is the number of edges.
 
+We will also be using BFS to traverse the graph.
+
 Timeline
 11/18 - Download and store datasets
 11/25 - Write out the strong base to start with for algorithms that will be used. 
