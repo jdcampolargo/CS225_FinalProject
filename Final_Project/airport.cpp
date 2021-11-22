@@ -16,86 +16,71 @@ Airport::~Airport() {
 
 //Start of Dijkstra's algorithm
 
-import java.util.*;
-class Program {
+#include <vector>
+#include <limits>
+#include <set>
 
-  // O(v^2 + e) time | O(v) space - where v is the number of
-  // vertices and e is the number of edges in the input graph
-  public int[] dijkstrasAlgorithm(int start, int[][][] edges) {
+using namespace std;
 
-    int numberOfVertices = edges.length;
-    int[] minDistances = new int[edges.length];
-    Arrays.fill(minDistances, Integer.MAX_VALUE);
-    minDistances[start] = 0;
-    Set<Integer> visited = new HashSet<Integer>();
-    while (visited.size() != numberOfVertices) {
+tuple<int, int> getVertexWithMinDistances(vector<int> minDistances, set<int> distances);
+// O(v^2 + e) time | O(v) space - where v is the number of
+// vertices and e is the number of edges in the input graph
 
-      int[] getVertexData = getVertexWithMinDistances(minDistances, visited);
-   int vertex = getVertexData[0];
-
-      int currentMinDistance = getVertexData[1];
-			
-		
-			if (currentMinDistance == Integer.MAX_VALUE) {
-				break;
-}
-	visited.add(vertex);
-			
-			for (int[] edge : edges[vertex]) {
-	
-				int destination = edge[0];
-				int distanceToDestination = edge[1];
-				
-				if (visited.contains(destination)) {
-					continue;
-        }		
-			}
-        int newPathDistance = currentMinDistance + distanceToDestination;
-
-        int currentDestinationDistance = minDistances[destination];
-
-        if (newPathDistance < currentDestinationDistance) {
-
-          minDistances[destination] = newPathDistance;
-
-        }
+vector<int> dijkstrasAlgorithm(int start, vector<vector<vector<int>>> edges) {
+  int numberOfVertices = edges.size();
+  vector<int> minDistances(edges.size(), numeric_limits<int>::max());
+  minDistances[start] = 0;
+  set<int> visited;
+  while (visited.size() != numberOfVertices) {
+    auto [vertex, currentMinDistance] =
+        getVertexWithMinDistances(minDistances, visited);
+    if (currentMinDistance == numeric_limits<int>::max()) {
+      break;
     }
-    }
-    int[] finalDistances = new int[minDistances.length];
-    for (int i = 0; i < minDistances.length; i++) {
-
-      int distance = minDistances[i];
-
-      if (distance == Integer.MAX_VALUE) {
-        finalDistances[i] = -1;
-
-      } else {
-
-        finalDistances[i] = distance;
-
-      }
-
-    }
-
-    return finalDistances;
-
-  }
-  public int[] getVertexWithMinDistances(int[] distances, Set<Integer> visited) {
-int currentMinDistance = Integer.MAX_VALUE;
-    int vertex = -1;
-    for (int vertexIdx = 0; vertexIdx < distances.length; vertexIdx++) {
-      int distance = distances[vertexIdx];
-      if (visited.contains(vertexIdx)) {
-
+    visited.insert(vertex);
+for (auto edge : edges[vertex]) {
+      auto destination = edge[0];
+      auto distanceToDestination = edge[1];
+      if (visited.find(destination) != visited.end()) {
         continue;
       }
-      if (distance <= currentMinDistance) {
-        vertex = vertexIdx;
-        currentMinDistance = distance;
+      auto newPathDistance = currentMinDistance + distanceToDestination;
+      auto currentDestinationDistance = minDistances[destination];
+      if (newPathDistance < currentDestinationDistance) {
+        minDistances[destination] = newPathDistance;
       }
     }
-
-    return new int[] {vertex, currentMinDistance};
-
   }
+  vector<int> finalDistances;
+  for (auto distance : minDistances) {
+    if (distance == numeric_limits<int>::max()) {
+      finalDistances.push_back(-1);
+    } else {
+      finalDistances.push_back(distance);
+    }
+  }
+  return finalDistances;
+
+}
+tuple<int, int> getVertexWithMinDistances(vector<int> distances, set<int> visited) {
+	
+	int currentMinDistance = numeric_limits<int>::max();
+
+  int vertex = -1;
+  for (int vertexIdx = 0; vertexIdx < distances.size(); vertexIdx++) {
+
+    int distance = distances[vertexIdx];
+    if (visited.find(vertexIdx) != visited.end()) {
+      continue;
+    }
+
+    if (distance <= currentMinDistance) {
+
+      vertex = vertexIdx;
+
+      currentMinDistance = distance;
+
+    }
+  }
+  return {vertex, currentMinDistance};
 }
