@@ -21,6 +21,6 @@ Timeline
 11/25 - Write out the strong base to start with for algorithms that will be used. 
 12/2 - Implement the algorithms into the data correctly.
 12/9 - Test and debug 
-12/13 - Revise and polish code if necessary.
+12/13 - Revise and polish code if necessary. 
 
 
