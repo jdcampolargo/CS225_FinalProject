@@ -53,3 +53,13 @@ double Graph::calculateDistance(double lat1, double long1, double lat2, double l
     dist = (6371 * pi * dist) / 180;
     return dist;
 }
+
+int Graph::findNumberOfConnections(std::string airportCode) {
+    int connections = 0;
+    for (int i = 0; i < adjacencyMatrix_[airportToIndexMap[airportCode]].size(); i++) {
+        if (adjacencyMatrix_[airportToIndexMap[airportCode]][i].size() != 0) {
+            connections += adjacencyMatrix_[airportToIndexMap[airportCode]][i].size();
+        }
+    }
+    return connections;
+}

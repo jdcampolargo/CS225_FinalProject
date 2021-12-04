@@ -11,4 +11,5 @@ class Graph {
     std::vector<std::vector<std::vector<double>>> adjacencyMatrix_;
     std::map<std::string, int> airportToIndexMap;
     double calculateDistance(double lat1, double long1, double lat2, double long2);
+    int findNumberOfConnections(std::string airportCode);
 };
