@@ -2,23 +2,22 @@
 
 using std::string;
 
-namespace Parser {
-    unsigned Node::num_nodes_;
-    
-    Node::Node(string data) {
-        id_ = num_nodes_++;
-        data_ = data;
-    }
 
-    Node::~Node() {
-        num_nodes_--;
-    }
+template <class T>
+Node<T>::Node(T data) {
+    data_ = data;
+}
+template <class T>
+void Node<T>::setVisited(bool condition) {
+    visited_ = true;
+}
 
-    unsigned Node::getID() {
-        return id_;
-    }
+template <class T>
+bool Node<T>::isVisited() {
+            return visited_;
+        }
 
-    string Node::getData() {
-        return data_;
-    }
+template <class T>
+T Node<T>::getData() {
+    return data_;
 }

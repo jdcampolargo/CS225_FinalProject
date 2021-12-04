@@ -1,22 +1,20 @@
 #pragma once
-
 #include <stdint.h>
 #include <string>
 
-namespace Parser {
 
+template <class T>
 class Node {
     public:
-        Node(std::string data);
-        ~Node();
+        Node(T data);
+        
+        T getData();
 
-        unsigned getID();
-        std::string getData();
+        void setVisited(bool condition);
 
-        static unsigned num_nodes_;
+        bool isVisited();
 
     private:
-        unsigned id_ = 0;
-        std::string data_ = "";
+        T data_ = T();
+        bool visited_ = false;
 };
-}

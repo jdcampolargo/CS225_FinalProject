@@ -19,5 +19,5 @@ endif()
 project(Airplane VERSION 1.0)
 
 add_subdirectory(parsing)
-add_subdirectory(adder)
+#add_subdirectory(adder)
 add_subdirectory(airport)

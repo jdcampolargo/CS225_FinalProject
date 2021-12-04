@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bnguyen4/Desktop/cpp-project-template
+CMAKE_SOURCE_DIR = /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bnguyen4/Desktop/cpp-project-template
+CMAKE_BINARY_DIR = /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,14 +100,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(CMAKE_COMMAND) -E cmake_progress_start /home/bnguyen4/Desktop/cpp-project-template/CMakeFiles /home/bnguyen4/Desktop/cpp-project-template/adder/CMakeFiles/progress.marks
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bnguyen4/Desktop/cpp-project-template/CMakeFiles 0
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(CMAKE_COMMAND) -E cmake_progress_start /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/adder/CMakeFiles/progress.marks
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/clean
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,22 +117,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/preinstall
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/preinstall
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 adder/CMakeFiles/test-adder.dir/rule:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/test-adder.dir/rule
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/test-adder.dir/rule
 .PHONY : adder/CMakeFiles/test-adder.dir/rule
 
 # Convenience name for target.
@@ -142,12 +142,12 @@ test-adder: adder/CMakeFiles/test-adder.dir/rule
 
 # fast build rule for target.
 test-adder/fast:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/build
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/build
 .PHONY : test-adder/fast
 
 # Convenience name for target.
 adder/CMakeFiles/main-adder.dir/rule:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/main-adder.dir/rule
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/main-adder.dir/rule
 .PHONY : adder/CMakeFiles/main-adder.dir/rule
 
 # Convenience name for target.
@@ -157,12 +157,12 @@ main-adder: adder/CMakeFiles/main-adder.dir/rule
 
 # fast build rule for target.
 main-adder/fast:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/build
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/build
 .PHONY : main-adder/fast
 
 # Convenience name for target.
 adder/CMakeFiles/AdderLib.dir/rule:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/AdderLib.dir/rule
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adder/CMakeFiles/AdderLib.dir/rule
 .PHONY : adder/CMakeFiles/AdderLib.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ AdderLib: adder/CMakeFiles/AdderLib.dir/rule
 
 # fast build rule for target.
 AdderLib/fast:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/build
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/build
 .PHONY : AdderLib/fast
 
 main.o: main.cpp.o
@@ -181,7 +181,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.o
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -190,7 +190,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.i
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -199,7 +199,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.s
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/main-adder.dir/build.make adder/CMakeFiles/main-adder.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 src/adder.o: src/adder.cpp.o
@@ -208,8 +208,8 @@ src/adder.o: src/adder.cpp.o
 
 # target to build an object file
 src/adder.cpp.o:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.o
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.o
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.o
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.o
 .PHONY : src/adder.cpp.o
 
 src/adder.i: src/adder.cpp.i
@@ -218,8 +218,8 @@ src/adder.i: src/adder.cpp.i
 
 # target to preprocess a source file
 src/adder.cpp.i:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.i
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.i
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.i
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.i
 .PHONY : src/adder.cpp.i
 
 src/adder.s: src/adder.cpp.s
@@ -228,8 +228,8 @@ src/adder.s: src/adder.cpp.s
 
 # target to generate assembly for a file
 src/adder.cpp.s:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.s
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.s
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/src/adder.cpp.s
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/AdderLib.dir/build.make adder/CMakeFiles/AdderLib.dir/src/adder.cpp.s
 .PHONY : src/adder.cpp.s
 
 tests/test.o: tests/test.cpp.o
@@ -238,7 +238,7 @@ tests/test.o: tests/test.cpp.o
 
 # target to build an object file
 tests/test.cpp.o:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.o
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.o
 .PHONY : tests/test.cpp.o
 
 tests/test.i: tests/test.cpp.i
@@ -247,7 +247,7 @@ tests/test.i: tests/test.cpp.i
 
 # target to preprocess a source file
 tests/test.cpp.i:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.i
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.i
 .PHONY : tests/test.cpp.i
 
 tests/test.s: tests/test.cpp.s
@@ -256,7 +256,7 @@ tests/test.s: tests/test.cpp.s
 
 # target to generate assembly for a file
 tests/test.cpp.s:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.s
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
 tests/test_adder.o: tests/test_adder.cpp.o
@@ -265,7 +265,7 @@ tests/test_adder.o: tests/test_adder.cpp.o
 
 # target to build an object file
 tests/test_adder.cpp.o:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.o
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.o
 .PHONY : tests/test_adder.cpp.o
 
 tests/test_adder.i: tests/test_adder.cpp.i
@@ -274,7 +274,7 @@ tests/test_adder.i: tests/test_adder.cpp.i
 
 # target to preprocess a source file
 tests/test_adder.cpp.i:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.i
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.i
 .PHONY : tests/test_adder.cpp.i
 
 tests/test_adder.s: tests/test_adder.cpp.s
@@ -283,7 +283,7 @@ tests/test_adder.s: tests/test_adder.cpp.s
 
 # target to generate assembly for a file
 tests/test_adder.cpp.s:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.s
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f adder/CMakeFiles/test-adder.dir/build.make adder/CMakeFiles/test-adder.dir/tests/test_adder.cpp.s
 .PHONY : tests/test_adder.cpp.s
 
 # Help Target
@@ -320,6 +320,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bnguyen4/Desktop/cpp-project-template && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
