@@ -68,10 +68,10 @@ RM = /usr/bin/cmake3 -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2
+CMAKE_SOURCE_DIR = /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2
+CMAKE_BINARY_DIR = /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/samuild2/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
