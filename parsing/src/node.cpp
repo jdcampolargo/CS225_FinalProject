@@ -9,7 +9,7 @@ Node<T>::Node(T data) {
 }
 template <class T>
 void Node<T>::setVisited(bool condition) {
-    visited_ = true;
+    visited_ = condition;
 }
 
 template <class T>

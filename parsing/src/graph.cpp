@@ -8,11 +8,15 @@
 #include <cmath>
 #include <string>
 #include <exception>
+#include <queue>
 
 #define pi 3.14159265358979323846
 
+using std::vector;
+
 Graph::Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges) {
     adjacencyMatrix_.resize(nodes.size(), std::vector<std::vector<double>>(nodes.size()));
+    nodes_ = nodes;
     for (int i = 0; i < nodes.size(); i++) {
         airportToIndexMap.insert(std::pair<std::string, int>(nodes[i].getData().airportCode_, i));
     }
@@ -62,4 +66,24 @@ int Graph::findNumberOfConnections(std::string airportCode) {
         }
     }
     return connections;
+}
+
+std::queue<Node<Airport>> Graph::BFS(std::string startPosition) {
+    std::queue<Node<Airport>> visiting;
+    Node<Airport> startingNode = nodes_[airportToIndexMap[startPosition]];
+    visiting.push(startingNode);
+    startingNode.setVisited(true);
+    int count = 0;
+    while(!visiting.empty()) {
+        Node<Airport> currentNode = visiting.front();
+        std::cout<<visiting.front().getData().name_<<std::endl;
+        visiting.pop();
+        std::vector<std::vector<double>> currentList = adjacencyMatrix_[airportToIndexMap[currentNode.getData().airportCode_]];
+        for(int i = 0; i < currentList.size(); i++) {
+            if (currentList[i].size() != 0 && !nodes_[i].isVisited()) {
+                visiting.push(nodes_[i]);
+                nodes_[i].setVisited(true);
+            }
+        }
+    }
 }

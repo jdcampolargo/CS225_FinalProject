@@ -21,6 +21,8 @@ int main() {
     cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<endl;
     cout<<graph.findNumberOfConnections("ATL")<<endl;
 
+    graph.BFS("ORD");
+
     /*for (int i = 0; i < graph.adjacencyMatrix_.size(); i++) {
         for (int j = 0; j < graph.adjacencyMatrix_.size(); j++) {
             if (graph.adjacencyMatrix_[i][j].size() > 1) {

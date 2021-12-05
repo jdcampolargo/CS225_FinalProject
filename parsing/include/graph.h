@@ -4,6 +4,7 @@
 #include "../airport/include/airport.h"
 #include <vector>
 #include <map>
+#include <queue>
 
 class Graph {
     public:
@@ -13,4 +14,6 @@ class Graph {
     double calculateDistance(double lat1, double long1, double lat2, double long2);
     int findNumberOfConnections(std::string airportCode);
     //std::vector<double> getDistanceList(std::string airportCode);
+    std::vector<Node<Airport>> nodes_;
+    std::queue<Node<Airport>> BFS(std::string startPosition);
 };
