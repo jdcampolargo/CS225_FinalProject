@@ -17,11 +17,10 @@ int main() {
     parser.InputEdges(edgesList, "../data/RoutesData.csv");
     Graph graph(nodesList, edgesList);
 
-    cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")].size()<<endl;
-    cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<endl;
-    cout<<graph.findNumberOfConnections("ATL")<<endl;
-
-    graph.BFS("ORD");
+    //cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")].size()<<endl;
+    //cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<endl;
+    cout<<graph.findNumberOfConnections("ORD")<<endl;
+    std::cout<<graph.BFS("BFS").size()<<std::endl;
 
     /*for (int i = 0; i < graph.adjacencyMatrix_.size(); i++) {
         for (int j = 0; j < graph.adjacencyMatrix_.size(); j++) {

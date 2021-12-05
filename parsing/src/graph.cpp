@@ -14,12 +14,13 @@
 
 using std::vector;
 
-Graph::Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges) {
-    adjacencyMatrix_.resize(nodes.size(), std::vector<std::vector<double>>(nodes.size()));
+Graph::Graph(vector<Node<Airport>>& nodes, vector<Edge>& edges) {
+    adjacencyMatrix_.resize(nodes.size(), vector<vector<double>>(nodes.size()));
     nodes_ = nodes;
-    for (int i = 0; i < nodes.size(); i++) {
-        airportToIndexMap.insert(std::pair<std::string, int>(nodes[i].getData().airportCode_, i));
+    for (int i = 0; i < nodes_.size(); i++) {
+        airportToIndexMap.insert(std::pair<std::string, int>(nodes_[i].getData().airportCode_, i));
     }
+    int count = 0;
     for (Edge edge : edges) {
         int nodeIdx1;
         int nodeIdx2;
@@ -29,14 +30,14 @@ Graph::Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges) {
             nodeIdx1 = airportToIndexMap.at(edge.node1_);
         } catch (const std::exception& ex) {
             failed = true;
-            std::cout<<"Couldn't find "<< edge.node1_ <<std::endl;
+            //std::cout<<"Couldn't find "<< edge.node1_ <<std::endl;
         }
 
         try {
             nodeIdx2 = airportToIndexMap.at(edge.node2_);
         } catch (const std::exception& ex) {
             failed = true;
-            std::cout<<"Couldn't find "<< edge.node2_ <<std::endl;
+            //std::cout<<"Couldn't find "<< edge.node2_ <<std::endl;
         }
         if (!failed) {
             double lat1 = std::stod(nodes[nodeIdx1].getData().latitude_);
@@ -44,10 +45,11 @@ Graph::Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges) {
             double lat2 = std::stod(nodes[nodeIdx2].getData().latitude_);
             double long2 = std::stod(nodes[nodeIdx2].getData().longitude_);
             double flightDistance = calculateDistance(lat1, long1, lat2, long2);
-
             adjacencyMatrix_[nodeIdx1][nodeIdx2].push_back(flightDistance);
+            count++;
         }
     }
+    std::cout<<count<<std::endl;
 }
 
 double Graph::calculateDistance(double lat1, double long1, double lat2, double long2) {
@@ -69,21 +71,27 @@ int Graph::findNumberOfConnections(std::string airportCode) {
 }
 
 std::queue<Node<Airport>> Graph::BFS(std::string startPosition) {
+    std::queue<Node<Airport>> path;
     std::queue<Node<Airport>> visiting;
     Node<Airport> startingNode = nodes_[airportToIndexMap[startPosition]];
+    startingNode.visited_ = true;
     visiting.push(startingNode);
-    startingNode.setVisited(true);
-    int count = 0;
+    path.push(startingNode);
+
     while(!visiting.empty()) {
         Node<Airport> currentNode = visiting.front();
-        std::cout<<visiting.front().getData().name_<<std::endl;
+        std::cout<<currentNode.getData().name_<<std::endl;
         visiting.pop();
-        std::vector<std::vector<double>> currentList = adjacencyMatrix_[airportToIndexMap[currentNode.getData().airportCode_]];
+        vector<vector<double>> currentList = adjacencyMatrix_[airportToIndexMap[currentNode.getData().airportCode_]];
         for(int i = 0; i < currentList.size(); i++) {
-            if (currentList[i].size() != 0 && !nodes_[i].isVisited()) {
-                visiting.push(nodes_[i]);
-                nodes_[i].setVisited(true);
+            if (!nodes_[i].visited_) {
+                if (currentList[i].size() > 0) {
+                    nodes_[i].visited_ = true;
+                    visiting.push(nodes_[i]);
+                    path.push(nodes_[i]);
+                }
             }
         }
     }
+    return path;
 }
