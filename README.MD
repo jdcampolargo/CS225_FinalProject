@@ -112,6 +112,47 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+# First Time
+We will refer to the home project directory as `project/`. If this is your first time with the project and you are unfamiliar with the running scripts, then please execute the following in your command line (Note you must type in the stuff after the dollar sign. The stuff before the `$` symbol denotes the current filepath):
+
+`$ cd project/`
+
+`project$ chmod +x run.sh`
+
+`project$ ./run.sh`
+
+This will run the included script that runs the main method with default arguments and also all tests in each subdirectory. This is just a concatenation of running the bake, tests, and main at once.
+
+
+# Building Files
+We decided to use CMake in this project due to its usefulness in helping us create Makefiles through a list of well-defined macros. The following command will bake the project (Build & Make). Run these in your local terminal. Note, please consider doing all of this on EWS as we assume tools on EWS (like CMake3 etc.).
+
+`project$ ./bake.sh`
+
+# Running Main, Tests
+## Main
+To run main or tests, you can just execute the main script like so:
+
+`project$ ./main.sh`
+<!-- 
+The main method also includes some additional input if you would like to play around with the inputs. You can run `./main -h` or `./main --help` for more information on the usage type. The result should print something like:
+
+`Usage: ./main [nodes file] [edges file]`
+
+For example, we provided a fake dataset so you could run the following:
+
+`./main ../data/nodes.csv ../data/edges.csv` -->
+
+Note that everything will be relative to the `src/` directory even though the script is in the `project/` directory.
+
+## Tests
+I have made a `test.sh` script that runs all the tests in the subdirectories. You can just run it like so:
+
+`project$ ./test.sh`
+
+and you should see the success on all parts.
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
