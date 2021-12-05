@@ -5,17 +5,31 @@
 #include "include/parser.h"
 #include "include/graph.h"
 #include <map>
+using std::vector;
+using std::cout;
+using std::endl;
 
 int main() {
     Parser parser = Parser();
-    std::vector<Node<Airport>> nodesList = std::vector<Node<Airport>>();
-    std::vector<Edge> edgesList = std::vector<Edge>();
+    vector<Node<Airport>> nodesList = vector<Node<Airport>>();
+    vector<Edge> edgesList = vector<Edge>();
     parser.InputNodes(nodesList, "../data/AirportData.csv");
     parser.InputEdges(edgesList, "../data/RoutesData.csv");
     Graph graph(nodesList, edgesList);
 
-    std::cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")].size()<<std::endl;
-    std::cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<std::endl;
-    std::cout<<graph.findNumberOfConnections("DME")<<std::endl;
+    cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")].size()<<endl;
+    cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<endl;
+    cout<<graph.findNumberOfConnections("ATL")<<endl;
+
+    /*for (int i = 0; i < graph.adjacencyMatrix_.size(); i++) {
+        for (int j = 0; j < graph.adjacencyMatrix_.size(); j++) {
+            if (graph.adjacencyMatrix_[i][j].size() > 1) {
+                std::cout<<nodesList[i].getData().airportCode_<< "--->" << nodesList[j].getData().airportCode_<<std::endl;
+                for (int k = 0; k < graph.adjacencyMatrix_[i][j].size(); k++) {
+                    std::cout<<graph.adjacencyMatrix_[i][j][k]<<std::endl;
+                }
+            }
+        }
+    }*/
     return 0;
 }
