@@ -14,7 +14,8 @@ class Node {
 
         bool isVisited();
 
+        bool visited_ = false;
+
     private:
         T data_ = T();
-        bool visited_ = false;
 };
