@@ -9,7 +9,9 @@ Our project proposal got approved, and we started to get going. However, we had 
 11/30/2021
 Throughout the week, we worked on finishing the gathering of the data as well as including it in our repository. Most importantly, we were able to organize our projects in an organized manner so we can all start working parallelly on the project. Finally, we were able to compile our project after organizing and creating the script for CMake and make. 
 
-This week, we'll be focusing on parsing and algorithms.
+This week, we'll be focusing on parsing and algorithms. Additionally, we had our group meeting check-in with our mentor where we had feedback about how to figure out the BFS as well as some of the tests we need to write when we finish everything. 
+
+On Friday, parsing was completed and graphing the following morning. On Saturday, we met as a group to make progress on the graph algorithms.
 
 
 12/07/2021
