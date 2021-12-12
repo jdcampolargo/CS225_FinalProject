@@ -1,41 +1,41 @@
-#include "../include/parser.h"
-#include "../include/node.h"
-#include "../src/node.cpp"
+#include "include/parser.h"
+#include "include/node.h"
 #include "../airport/include/airport.h"
 #include "../airport/src/airport.cpp"
 #include <vector>
 #include <map>
 #include <fstream>
 
+using std::vector;
+using std::string;
 
-Parser::Parser(){}
-
-void Parser::InputNodes(std::vector<Node<Airport>>& airportVector, std::string filename) {
+void Parser::InputNodes(vector<Node>& airportVector, std::string filename) {
     std::ifstream myFile(filename);
     std::string line;
      while(std::getline(myFile, line))
      {
-        std::vector<std::string> splitList = CommaSplit(line);
+        vector<std::string> splitList = CommaSplit(line);
+        
         removeWhiteSpace(splitList[3]);
-        Node<Airport> node = Node<Airport>(Airport(splitList[0], splitList[1], splitList[2], splitList[3], splitList[4], splitList[5], splitList[6]));
+        Node node = Node(Airport(splitList[0], splitList[1], splitList[2], splitList[3], splitList[4], splitList[5], splitList[6]));
         airportVector.push_back(node);
      }
 
 }
 
-void Parser::InputEdges(std::vector<Edge>& edgesVector, std::string filename) {
+void Parser::InputEdges(vector<Edge>& edgesVector, std::string filename) {
     std::ifstream myFile(filename);
     std::string line;
      while(std::getline(myFile, line))
      {
-        std::vector<std::string> splitList = CommaSplit(line);
+        vector<std::string> splitList = CommaSplit(line);
         Edge edge(removeWhiteSpace(splitList[1]), removeWhiteSpace(splitList[2]));
         edgesVector.push_back(edge);
      }
 }
 
-std::vector<std::string> Parser::CommaSplit(std::string string) {
-    std::vector<std::string> splitList;
+vector<std::string> Parser::CommaSplit(std::string string) {
+    vector<std::string> splitList;
     std::string temp = "";
     for (size_t i = 0; i < string.length(); i++) {
         if (string[i] != ',') {

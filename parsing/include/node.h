@@ -1,21 +1,27 @@
 #pragma once
+#include "../airport/include/airport.h"
+#include "edge.h"
 #include <stdint.h>
 #include <string>
+#include <vector>
+
+//class Edge;
 
 
-template <class T>
 class Node {
     public:
-        Node(T data);
+    std::vector<Edge> edges;
+
+    Node(Airport data);
         
-        T getData();
+    Airport& getData();
 
-        void setVisited(bool condition);
+    void setVisited(bool condition);
 
-        bool isVisited();
+    bool isVisited();
 
-        bool visited_ = false;
+    bool visited_ = false;
 
     private:
-        T data_ = T();
+    Airport data_ = Airport();
 };
