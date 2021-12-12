@@ -7,16 +7,32 @@
 #include <queue>
 
 using std::vector;
+using std::map;
+using std::queue;
+using std::cout;
+using std::end;
 
 class Graph {
     public:
-    Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges);
-    std::vector<std::vector<std::vector<double>>> adjacencyMatrix_;
-    std::map<std::string, int> airportToIndexMap;
-    double calculateDistance(double lat1, double long1, double lat2, double long2);
+    vector<Node> nodes_;
+    vector<vector<double>> adjacencyMatrix_;
+    map<std::string, int> airportToIndexMap;
+    int nodeCount = 0;
+    int edgesCount = 0;
+
+    Graph();
+
+    Graph(vector<Node>& nodes, vector<Edge>& edges);
+
+    void insertNode(Node& node);
+
+    void insertEdge(Edge edge);
+
+    queue<Node> BFS(std::string startPosition);
+
     int findNumberOfConnections(std::string airportCode);
-    //std::vector<double> getDistanceList(std::string airportCode);
-    std::vector<Node<Airport>> nodes_;
-    std::queue<Node<Airport>> BFS(std::string startPosition);
+
+    private:
+    double calculateDistance(double lat1, double long1, double lat2, double long2);
     
 };

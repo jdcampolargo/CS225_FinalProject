@@ -1,23 +1,20 @@
-#include "../include/node.h"
+#include "include/node.h"
 
 using std::string;
 
 
-template <class T>
-Node<T>::Node(T data) {
+
+Node::Node(Airport data) {
     data_ = data;
 }
-template <class T>
-void Node<T>::setVisited(bool condition) {
+void Node::setVisited(bool condition) {
     visited_ = condition;
 }
 
-template <class T>
-bool Node<T>::isVisited() {
+bool Node::isVisited() {
             return visited_;
         }
 
-template <class T>
-T Node<T>::getData() {
+Airport& Node::getData() {
     return data_;
 }

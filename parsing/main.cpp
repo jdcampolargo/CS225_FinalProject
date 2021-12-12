@@ -1,9 +1,8 @@
-#include <iostream>
-#include "include/node.h"
-#include "src/node.cpp"
 #include "../airport/include/airport.h"
+#include "include/node.h"
 #include "include/parser.h"
 #include "include/graph.h"
+#include <iostream>
 #include <map>
 using std::vector;
 using std::cout;
@@ -11,24 +10,47 @@ using std::endl;
 
 int main() {
     Parser parser = Parser();
-    vector<Node<Airport>> nodesList = vector<Node<Airport>>();
-    vector<Edge> edgesList = vector<Edge>();
+    vector<Node> nodesList;
+    vector<Edge> edgesList;
+    //USA  airports only
+    //parser.InputNodes(nodesList, "../data/USAAirports.csv");
+    //All airports
     parser.InputNodes(nodesList, "../data/AirportData.csv");
     parser.InputEdges(edgesList, "../data/RoutesData.csv");
-    Graph graph(nodesList, edgesList);
+    
+    /*Graph testGraph = Graph();
 
-    //cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")].size()<<endl;
-    //cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("BRL")][graph.airportToIndexMap.at("ORD")][0]<<endl;
+    for (int i = 0; i < 10; i++) {
+        testGraph.insertNode(nodesList[i]);
+        //cout<<nodesList[i].getData().airportCode_<<endl;
+        //cout<<nodesList[i].edges.size()<<endl;
+    }
+
+    Edge edge("GKA", "MAG");
+    Edge edge1("MAG", "GKA");
+
+    testGraph.insertEdge(edge);
+    testGraph.insertEdge(edge1);
+
+    cout<<testGraph.adjacencyMatrix_.size()<<endl;
+    cout<<testGraph.adjacencyMatrix_[testGraph.airportToIndexMap.at("GKA")].size()<<endl;
+
+    cout<<testGraph.nodes_[testGraph.airportToIndexMap.at("GKA")].edges.size()<<endl;
+    cout<<testGraph.nodes_[testGraph.airportToIndexMap.at("GKA")].edges[0].nodeTwoCode<<endl;
+    cout<<testGraph.nodes_[testGraph.airportToIndexMap.at("MAG")].edges.size()<<endl;
+    cout<<testGraph.nodes_[testGraph.airportToIndexMap.at("MAG")].edges[0].nodeTwoCode<<endl;*/
+
+    Graph graph(nodesList, edgesList);
+    cout<<graph.adjacencyMatrix_[graph.airportToIndexMap.at("ORD")][graph.airportToIndexMap.at("ATL")]<<endl;
     cout<<graph.findNumberOfConnections("ORD")<<endl;
-    std::cout<<graph.BFS("BFS").size()<<std::endl;
+    cout<<graph.edgesCount<<endl;
+    cout<<graph.BFS("ORD").size()<<endl;
 
     /*for (int i = 0; i < graph.adjacencyMatrix_.size(); i++) {
         for (int j = 0; j < graph.adjacencyMatrix_.size(); j++) {
-            if (graph.adjacencyMatrix_[i][j].size() > 1) {
-                std::cout<<nodesList[i].getData().airportCode_<< "--->" << nodesList[j].getData().airportCode_<<std::endl;
-                for (int k = 0; k < graph.adjacencyMatrix_[i][j].size(); k++) {
-                    std::cout<<graph.adjacencyMatrix_[i][j][k]<<std::endl;
-                }
+            if (graph.adjacencyMatrix_[i][j] > 0) {
+                cout<<nodesList[i].getData().airportCode_<< "--->" << nodesList[j].getData().airportCode_<<endl;
+                cout<<graph.adjacencyMatrix_[i][j]<<endl;
             }
         }
     }*/
