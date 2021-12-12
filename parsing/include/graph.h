@@ -6,6 +6,8 @@
 #include <map>
 #include <queue>
 
+using std::vector;
+
 class Graph {
     public:
     Graph(std::vector<Node<Airport>>& nodes, std::vector<Edge>& edges);

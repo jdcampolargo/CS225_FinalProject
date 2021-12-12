@@ -14,43 +14,6 @@
 
 using std::vector;
 
-<<<<<<< HEAD
-Graph::Graph(vector<Node<Airport>> &nodes, vector<Edge> &edges) {
-  adjacencyMatrix_.resize(nodes.size(), vector<vector<double>>(nodes.size()));
-  nodes_ = nodes;
-  for (int i = 0; i < nodes.size(); i++) {
-    airportToIndexMap.insert(
-        std::pair<std::string, int>(nodes[i].getData().airportCode_, i));
-  }
-  for (Edge edge : edges) {
-    int nodeIdx1;
-    int nodeIdx2;
-    bool failed = false;
-
-    try {
-      nodeIdx1 = airportToIndexMap.at(edge.node1_);
-    } catch (const std::exception &ex) {
-      failed = true;
-      // std::cout << "Couldn't find " << edge.node1_ << std::endl;
-    }
-
-    try {
-      nodeIdx2 = airportToIndexMap.at(edge.node2_);
-    } catch (const std::exception &ex) {
-      failed = true;
-      // std::cout << "Couldn't find " << edge.node2_ << std::endl;
-    }
-    if (!failed) {
-      double lat1 = std::stod(nodes[nodeIdx1].getData().latitude_);
-      double long1 = std::stod(nodes[nodeIdx1].getData().longitude_);
-      double lat2 = std::stod(nodes[nodeIdx2].getData().latitude_);
-      double long2 = std::stod(nodes[nodeIdx2].getData().longitude_);
-      double flightDistance = calculateDistance(lat1, long1, lat2, long2);
-
-      adjacencyMatrix_[nodeIdx1][nodeIdx2].push_back(flightDistance);
-    }
-  }
-=======
 Graph::Graph(vector<Node<Airport>>& nodes, vector<Edge>& edges) {
     adjacencyMatrix_.resize(nodes.size(), vector<vector<double>>(nodes.size()));
     nodes_ = nodes;
@@ -87,7 +50,6 @@ Graph::Graph(vector<Node<Airport>>& nodes, vector<Edge>& edges) {
         }
     }
     std::cout<<count<<std::endl;
->>>>>>> e178c44ef25e4cb957c8c83f79ae7dcea5180e39
 }
 
 double Graph::calculateDistance(double lat1, double long1, double lat2,
@@ -111,32 +73,6 @@ int Graph::findNumberOfConnections(std::string airportCode) {
 }
 
 std::queue<Node<Airport>> Graph::BFS(std::string startPosition) {
-<<<<<<< HEAD
-  std::queue<Node<Airport>> visiting;
-  Node<Airport> startingNode =
-      nodes_[airportToIndexMap[startPosition]]; // position you want to start
-                                                // with (airport)
-  visiting.push(startingNode);                  // a queque of visited nodes
-  int count = 0;
-  while (!visiting.empty()) {
-    Node<Airport> currentNode = visiting.front();
-    currentNode.setVisited(true);
-
-    std::cout << visiting.front().getData().name_ << std::endl;
-    visiting.pop();
-    startingNode.setVisited(true); // set to visited because we start here
-    vector<vector<double>> currentList =
-        adjacencyMatrix_[airportToIndexMap[currentNode.getData().airportCode_]];
-    for (int i = 0; i < currentList.size(); i++) {
-      if (currentList[i].size() != 0 && !nodes_[i].isVisited()) {
-        visiting.push(nodes_[i]);
-      }
-    }
-  }
-}
-
-//either the path or the distance to get there
-=======
     std::queue<Node<Airport>> path;
     std::queue<Node<Airport>> visiting;
     Node<Airport> startingNode = nodes_[airportToIndexMap[startPosition]];
@@ -161,4 +97,3 @@ std::queue<Node<Airport>> Graph::BFS(std::string startPosition) {
     }
     return path;
 }
->>>>>>> e178c44ef25e4cb957c8c83f79ae7dcea5180e39
