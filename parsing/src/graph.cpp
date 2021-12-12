@@ -1,3 +1,4 @@
+#include "../airport/include/airport.h"
 #include "../include/graph.h"
 #include "../include/node.h"
 #include "../airport/include/airport.h"
@@ -5,9 +6,12 @@
 #include <map>
 #include <iostream>
 #include <cmath>
-#include <string>
 #include <exception>
+#include <iostream>
+#include <map>
 #include <queue>
+#include <string>
+#include <vector>
 
 #define pi 3.14159265358979323846
 
@@ -21,14 +25,18 @@ Graph::Graph() {}
 Graph::Graph(vector<Node>& nodes, vector<Edge>& edges) {
     nodes_ = nodes;
     nodeCount = nodes_.size();
+    
+    //resize matrix
     vector<double> temp;
     temp.resize(nodeCount);
     adjacencyMatrix_.resize(nodeCount, temp);
 
+    //create map for code to index
     for (int i = 0; i < nodes_.size(); i++) {
         airportToIndexMap.insert(pair<std::string, int>(nodes_[i].getData().airportCode_, i));
     }
 
+    //insert edges
     for (Edge edge : edges) {
         insertEdge(edge);
     }
@@ -40,6 +48,7 @@ void Graph::insertNode(Node& node) {
     vector<double> temp;
     temp.resize(nodeCount);
     adjacencyMatrix_.push_back(temp);
+
     for (int i = 0; i < nodeCount - 1; i++) {
         adjacencyMatrix_[i].push_back(0);
     }
@@ -51,6 +60,7 @@ void Graph::insertEdge(Edge& edge) {
     int nodeIdx2;
     bool failed = false;
 
+    //check if node is found
     try {
         nodeIdx1 = airportToIndexMap.at(edge.nodeOneCode);
     } catch (const std::exception& ex) {
@@ -67,6 +77,7 @@ void Graph::insertEdge(Edge& edge) {
     if (!failed && airportToIndexMap.at(edge.nodeTwoCode) == airportToIndexMap.at(edge.nodeOneCode)) {
         failed = true;
     }
+
     if (!failed) {
         //find distance
         double lat1 = std::stod(nodes_[nodeIdx1].getData().latitude_);
@@ -74,6 +85,7 @@ void Graph::insertEdge(Edge& edge) {
         double lat2 = std::stod(nodes_[nodeIdx2].getData().latitude_);
         double long2 = std::stod(nodes_[nodeIdx2].getData().longitude_);
         double flightDistance = calculateDistance(lat1, long1, lat2, long2);
+
         //add edge to edges list for each node
         nodes_.at(nodeIdx1).edges.push_back(edge);
         adjacencyMatrix_[nodeIdx1][nodeIdx2] = flightDistance;
@@ -81,12 +93,13 @@ void Graph::insertEdge(Edge& edge) {
     }
 }
 
-double Graph::calculateDistance(double lat1, double long1, double lat2, double long2) {
-    double dist;
-    dist = sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long1 - long2);
-    dist = acos(dist);
-    dist = (6371 * pi * dist) / 180;
-    return dist;
+double Graph::calculateDistance(double lat1, double long1, double lat2,
+                                double long2) {
+  double dist;
+  dist = sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long1 - long2);
+  dist = acos(dist);
+  dist = (6371 * pi * dist) / 180; // formula for calculalting distance
+  return dist;
 }
 
 int Graph::findNumberOfConnections(std::string airportCode) {
@@ -96,16 +109,15 @@ int Graph::findNumberOfConnections(std::string airportCode) {
             connections++;
         }
     }
-    return connections;
+  return connections;
 }
 
 std::queue<Node> Graph::BFS(std::string startPosition) {
     std::queue<Node> path;
     std::queue<Node> visiting;
-
     Node startingNode = nodes_[airportToIndexMap[startPosition]];
-    startingNode.visited_ = true;
     visiting.push(startingNode);
+    startingNode.visited_ = true;
     path.push(startingNode);
 
     while(!visiting.empty()) {
