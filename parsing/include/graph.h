@@ -26,7 +26,7 @@ class Graph {
 
     void insertNode(Node& node);
 
-    void insertEdge(Edge& edge);
+    void insertEdge(Edge edge);
 
     queue<Node> BFS(std::string startPosition);
 

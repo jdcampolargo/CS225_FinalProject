@@ -2,16 +2,13 @@
 #include "../include/graph.h"
 #include "../include/node.h"
 #include "../airport/include/airport.h"
-#include <vector>
-#include <map>
-#include <iostream>
-#include <cmath>
 #include <exception>
 #include <iostream>
-#include <map>
-#include <queue>
-#include <string>
 #include <vector>
+#include <string>
+#include <cmath>
+#include <queue>
+#include <map>
 
 #define pi 3.14159265358979323846
 
@@ -52,10 +49,10 @@ void Graph::insertNode(Node& node) {
     for (int i = 0; i < nodeCount - 1; i++) {
         adjacencyMatrix_[i].push_back(0);
     }
-    airportToIndexMap.insert(pair<std::string, int>(node.getData().airportCode_, nodeCount));
+    airportToIndexMap.insert(pair<std::string, int>(node.getData().airportCode_, nodeCount - 1));
 }
 
-void Graph::insertEdge(Edge& edge) {
+void Graph::insertEdge(Edge edge) {
     int nodeIdx1;
     int nodeIdx2;
     bool failed = false;
@@ -113,9 +110,12 @@ int Graph::findNumberOfConnections(std::string airportCode) {
 }
 
 std::queue<Node> Graph::BFS(std::string startPosition) {
+    //copy nodes for algo since we dont want to change visited value permenantly
+    vector<Node> nodes = nodes_;
     std::queue<Node> path;
     std::queue<Node> visiting;
-    Node startingNode = nodes_[airportToIndexMap[startPosition]];
+    Node& startingNode = nodes[airportToIndexMap[startPosition]];
+
     visiting.push(startingNode);
     startingNode.visited_ = true;
     path.push(startingNode);
@@ -126,10 +126,10 @@ std::queue<Node> Graph::BFS(std::string startPosition) {
         visiting.pop();
         for(int i = 0; i < currentNode.edges.size(); i++) {
             int nodetoCheck = airportToIndexMap.at(currentNode.edges[i].nodeTwoCode);
-            if (!nodes_[nodetoCheck].visited_) {
-                nodes_[nodetoCheck].visited_ = true;
-                visiting.push(nodes_[nodetoCheck]);
-                path.push(nodes_[nodetoCheck]);
+            if (!nodes[nodetoCheck].visited_) {
+                nodes[nodetoCheck].visited_ = true;
+                visiting.push(nodes[nodetoCheck]);
+                path.push(nodes[nodetoCheck]);
             }
         }
     }
