@@ -94,9 +94,9 @@ void Graph::insertEdge(Edge edge) {
 double Graph::calculateDistance(double lat1, double long1, double lat2,
                                 double long2) {
   double dist;
-  dist = sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long1 - long2);
-  dist = acos(dist);
-  dist = (6371 * pi * dist) / 180; // formula for calculalting distance
+    dist = sin(lat1/180 * pi) * sin(lat2/180 * pi) + cos(lat1/180 * pi) * cos(lat2/180 * pi) * cos((long1 - long2)/180 * pi);
+    dist = acos(dist);
+    dist = 6371 * dist;
   return dist;
 }
 
