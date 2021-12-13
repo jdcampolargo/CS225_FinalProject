@@ -10,22 +10,27 @@
 using std::vector;
 using std::cout;
 using std::endl;
+using std::string;
 
 class PageRank {
     public:
-    void makeAdjMatrix(unsigned dim, double damping);
-    vector<double> makeVector();
-    vector<double> calculaterRank(vector<double> initial, size_t iterations, bool normalize);
+    PageRank(size_t max, Graph& graph);
+    void updateAdjMatrix(double damping);
+    vector<double> createInitialVector();
+    vector<double> calculateRank(size_t iterations, bool normalize);
     void popularAirports(size_t topNum);
     void printAdjMatrix();
     void printResults();
 
-    private: 
     unsigned dimension_;
     double damping_factor_;
     unsigned long max_iterations_;
+    size_t max_airports_;
     vector<vector<double>> adjacency_matrix_; 
-    vector<string> popular_airports;
+    vector<string> airport_codes_;
+    vector<double> initial_;
+
+    vector<string> popular_airports_;
     vector<double> pr_;
 
 };
