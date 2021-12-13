@@ -36,6 +36,6 @@ int main() {
     for (int i = 0; i < dijkstra.path.size(); i++) {
         cout<<dijkstra.path.at(i)<<endl;
     }
-    cout<<dijkstra.path_distance<<endl;
+    cout<<dijkstra.path_distance<<" kilometers"<<endl;
     return 0;
 }

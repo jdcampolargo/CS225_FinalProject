@@ -13,9 +13,7 @@ using std::endl;
 TEST_CASE("test Dijkstra") {
     Parser parser = Parser();
     vector<Node> nodesList;
-    vector<Edge> edgesList;
     parser.InputNodes(nodesList, "../data/AirportData.csv");
-    parser.InputEdges(edgesList, "../data/RoutesData.csv");
 
     Graph testGraph = Graph();
     for (int i = 0; i < 10; i++) {

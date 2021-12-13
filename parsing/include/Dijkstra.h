@@ -15,7 +15,7 @@ using namespace std;
 
 class Dijkstra {
     public:
-        Dijkstra(Graph graph, string StartAirport, string DestinationAirport);
+        Dijkstra(Graph& graph, string StartAirport, string DestinationAirport);
         map<string, double> distances;
         map<string, string> previous_nodes;
         vector<string> path;

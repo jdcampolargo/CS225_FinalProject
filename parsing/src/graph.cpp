@@ -84,7 +84,11 @@ void Graph::insertEdge(Edge edge) {
         double flightDistance = calculateDistance(lat1, long1, lat2, long2);
 
         //add edge to edges list for each node
-        edge.weight = flightDistance;
+
+        //Check if edge already has weight
+        if (int(edge.weight) <= 0) {
+            edge.weight = flightDistance;
+        }
         nodes_.at(nodeIdx1).edges.push_back(edge);
         adjacencyMatrix_[nodeIdx1][nodeIdx2] = flightDistance;
         edgesCount++;

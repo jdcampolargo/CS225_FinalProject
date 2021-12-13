@@ -15,7 +15,7 @@
 using namespace std;
 
 
-Dijkstra::Dijkstra (Graph graph, string StartAirport, string DestinationAirport) {
+Dijkstra::Dijkstra (Graph& graph, string StartAirport, string DestinationAirport) {
     bool failed = false;
     try {
         graph.nodes_.at(graph.airportToIndexMap.at(StartAirport));
