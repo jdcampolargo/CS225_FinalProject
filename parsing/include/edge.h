@@ -6,4 +6,6 @@ class Edge {
     Edge(std::string firstNode, std::string secondNode);
     std::string nodeOneCode;
     std::string nodeTwoCode;
+
+    double weight;
 };
