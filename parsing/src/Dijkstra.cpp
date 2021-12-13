@@ -64,9 +64,16 @@ Dijkstra::Dijkstra (Graph& graph, string StartAirport, string DestinationAirport
     path_distance = distances.at(DestinationAirport);
     string key = DestinationAirport;
     path.push_back(DestinationAirport);
+    int count = 0;
     while(key != StartAirport) {
         path.push_back(previous_nodes[key]);
         key = previous_nodes[key];
+        if (count == previous_nodes.size()) {
+            path_distance = 0;
+            path.clear();
+            break;
+        }
+        count++;
     }
     std::reverse(path.begin(), path.end());
     }

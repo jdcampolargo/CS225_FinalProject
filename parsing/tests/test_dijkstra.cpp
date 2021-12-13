@@ -10,7 +10,7 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-TEST_CASE("test Dijkstra") {
+TEST_CASE("Test Dijkstra input Nodes") {
     Parser parser = Parser();
     vector<Node> nodesList;
     parser.InputNodes(nodesList, "../data/AirportData.csv");
@@ -39,13 +39,56 @@ TEST_CASE("test Dijkstra") {
 
     Dijkstra dijkstra = Dijkstra(testGraph, "GKA", "POM");
 
-    for (int i = 0; i < dijkstra.path.size(); i++) {
-        cout<<dijkstra.path.at(i)<<endl;
+    SECTION("Test choose correct distance") {
+        REQUIRE(int(dijkstra.path_distance * 100) ==  544);
     }
-    cout<<dijkstra.path_distance<<endl;
 
+    SECTION("Test correct path") {
+        REQUIRE(dijkstra.path.at(0) == "GKA");
+        REQUIRE(dijkstra.path.at(1) == "MAG");
+        REQUIRE(dijkstra.path.at(2) == "HGU");
+        REQUIRE(dijkstra.path.at(3) == "LAE");
+        REQUIRE(dijkstra.path.at(4) == "POM");
+    }
+}
+
+TEST_CASE("Test Dijkstra Parsed Data") {
+    Parser parser = Parser();
+    vector<Node> nodesList;
+    vector<Edge> edgesList;
+    parser.InputNodes(nodesList, "../data/AirportData.csv");
+    parser.InputEdges(edgesList, "../data/RoutesData.csv");
+    Graph graph(nodesList, edgesList);
+
+    Dijkstra dijkstra = Dijkstra(graph, "MNL", "ORD");
 
     SECTION("Test choose correct distance") {
-        REQUIRE(dijkstra.path_distance ==  5.45);
+        REQUIRE(int(dijkstra.path_distance) ==  13124);
+    }
+
+    SECTION("Test correct path from Philippines to Chicago") {
+        REQUIRE(dijkstra.path.at(0) == "MNL");
+        REQUIRE(dijkstra.path.at(1) == "NRT");
+        REQUIRE(dijkstra.path.at(2) == "ORD");
+        
+    }
+
+    Dijkstra dijkstra1 = Dijkstra(graph, "CMI", "SOF");
+
+    SECTION("Test choose correct distance") {
+        REQUIRE(int(dijkstra1.path_distance) ==  8583);
+    }
+
+    SECTION("Test correct path from Champaign to Bulgaria") {
+        REQUIRE(dijkstra1.path.at(0) == "CMI");
+        REQUIRE(dijkstra1.path.at(1) == "ORD");
+        REQUIRE(dijkstra1.path.at(2) == "AMS");
+        REQUIRE(dijkstra1.path.at(3) == "SOF");
+    }
+
+    Dijkstra dijkstra2 = Dijkstra(graph, "AYK", "GDV");
+
+    SECTION("Test No Connection Airport") {
+        REQUIRE(dijkstra2.path.size() ==  0);
     }
 }

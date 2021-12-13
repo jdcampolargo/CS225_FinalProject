@@ -13,8 +13,6 @@ int main() {
     Parser parser = Parser();
     vector<Node> nodesList;
     vector<Edge> edgesList;
-    //USA  airports only
-    //parser.InputNodes(nodesList, "../data/USAAirports.csv");
     //All airports
     parser.InputNodes(nodesList, "../data/AirportData.csv");
     parser.InputEdges(edgesList, "../data/RoutesData.csv");
@@ -23,7 +21,7 @@ int main() {
 
     Graph graph(nodesList, edgesList);
 
-    //cout<<graph.findNumberOfConnections("HFN")<<endl;
+    //cout<<graph.findNumberOfConnections("AYK")<<endl;
 
     string source; 
     string destination;
