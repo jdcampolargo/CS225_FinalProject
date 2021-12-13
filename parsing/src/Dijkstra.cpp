@@ -33,7 +33,7 @@ Dijkstra::Dijkstra (Graph graph, string StartAirport, string DestinationAirport)
 
     if (!failed) {
         vector<Node> nodes = graph.nodes_;
-    priority_queue<pair<double, string>, vector<pair<double, string>>,greater<pair<double, string>> > Q;
+    priority_queue<pair<double, string>, vector<pair<double, string>>, greater<pair<double, string>> > Q;
 
     for (Node node : nodes) {
         string airportCode = node.getData().airportCode_;
