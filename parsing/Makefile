@@ -349,6 +349,33 @@ tests/test.cpp.s:
 	cd /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/test-parsing.dir/build.make parsing/CMakeFiles/test-parsing.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
+tests/test_graph.o: tests/test_graph.cpp.o
+
+.PHONY : tests/test_graph.o
+
+# target to build an object file
+tests/test_graph.cpp.o:
+	cd /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/test-parsing.dir/build.make parsing/CMakeFiles/test-parsing.dir/tests/test_graph.cpp.o
+.PHONY : tests/test_graph.cpp.o
+
+tests/test_graph.i: tests/test_graph.cpp.i
+
+.PHONY : tests/test_graph.i
+
+# target to preprocess a source file
+tests/test_graph.cpp.i:
+	cd /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/test-parsing.dir/build.make parsing/CMakeFiles/test-parsing.dir/tests/test_graph.cpp.i
+.PHONY : tests/test_graph.cpp.i
+
+tests/test_graph.s: tests/test_graph.cpp.s
+
+.PHONY : tests/test_graph.s
+
+# target to generate assembly for a file
+tests/test_graph.cpp.s:
+	cd /home/ahuert30/Desktop/jcampo37-ahuert30-psalin2-samuild2 && $(MAKE) $(MAKESILENT) -f parsing/CMakeFiles/test-parsing.dir/build.make parsing/CMakeFiles/test-parsing.dir/tests/test_graph.cpp.s
+.PHONY : tests/test_graph.cpp.s
+
 tests/test_node.o: tests/test_node.cpp.o
 
 .PHONY : tests/test_node.o
@@ -405,6 +432,9 @@ help:
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_graph.o"
+	@echo "... tests/test_graph.i"
+	@echo "... tests/test_graph.s"
 	@echo "... tests/test_node.o"
 	@echo "... tests/test_node.i"
 	@echo "... tests/test_node.s"

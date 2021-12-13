@@ -31,7 +31,7 @@ class Graph {
     queue<Node> BFS(std::string startPosition);
 
     int findNumberOfConnections(std::string airportCode);
-
+    
     private:
     double calculateDistance(double lat1, double long1, double lat2, double long2);
     
