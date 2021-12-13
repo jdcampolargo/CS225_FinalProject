@@ -12,6 +12,10 @@ using std::queue;
 using std::cout;
 using std::end;
 
+using std::list;
+using std::vector;
+using std::string;
+
 class Graph {
     public:
     vector<Node> nodes_;
@@ -35,4 +39,8 @@ class Graph {
     private:
     double calculateDistance(double lat1, double long1, double lat2, double long2);
     
+    //std::vector<double> getDistanceList(std::string airportCode);
+    std::vector<Node<Airport>> nodes_;
+    std::queue<Node<Airport>> BFS(std::string startPosition);
+    list<Node<Airports>> DijkstraAlgo()
 };

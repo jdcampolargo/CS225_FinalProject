@@ -12,28 +12,13 @@
 
 #define pi 3.14159265358979323846
 
-using std::vector;
-using std::pair;
-using std::cout;
-using std::endl;
-
-Graph::Graph() {}
-
-Graph::Graph(vector<Node>& nodes, vector<Edge>& edges) {
+Graph::Graph(vector<Node<Airport>>& nodes, vector<Edge>& edges) {
+    adjacencyMatrix_.resize(nodes.size(), vector<vector<double>>(nodes.size()));
     nodes_ = nodes;
-    nodeCount = nodes_.size();
-    
-    //resize matrix
-    vector<double> temp;
-    temp.resize(nodeCount);
-    adjacencyMatrix_.resize(nodeCount, temp);
-
-    //create map for code to index
     for (int i = 0; i < nodes_.size(); i++) {
-        airportToIndexMap.insert(pair<std::string, int>(nodes_[i].getData().airportCode_, i));
+        airportToIndexMap.insert(std::pair<string, int>(nodes_[i].getData().airportCode_, i));
     }
-
-    //insert edges
+    int count = 0;
     for (Edge edge : edges) {
         insertEdge(edge);
     }
@@ -88,6 +73,7 @@ void Graph::insertEdge(Edge edge) {
         adjacencyMatrix_[nodeIdx1][nodeIdx2] = flightDistance;
         edgesCount++;
     }
+    std::cout<<count<<std::endl;
 }
 
 double Graph::calculateDistance(double lat1, double long1, double lat2,
@@ -99,39 +85,43 @@ double Graph::calculateDistance(double lat1, double long1, double lat2,
   return dist;
 }
 
-int Graph::findNumberOfConnections(std::string airportCode) {
-    int connections = 0;
-    for (int i = 0; i < nodeCount; i++) {
-        if (adjacencyMatrix_[airportToIndexMap[airportCode]][i] > 0) {
-            connections++;
-        }
+int Graph::findNumberOfConnections(string airportCode) {
+  int connections = 0;
+  for (int i = 0; i < adjacencyMatrix_[airportToIndexMap[airportCode]].size();
+       i++) {
+    if (adjacencyMatrix_[airportToIndexMap[airportCode]][i].size() != 0) {
+      connections += adjacencyMatrix_[airportToIndexMap[airportCode]][i].size();
     }
+  }
   return connections;
 }
 
-std::queue<Node> Graph::BFS(std::string startPosition) {
-    //copy nodes for algo since we dont want to change visited value permenantly
-    vector<Node> nodes = nodes_;
-    std::queue<Node> path;
-    std::queue<Node> visiting;
-    Node& startingNode = nodes[airportToIndexMap[startPosition]];
-
-    visiting.push(startingNode);
+std::queue<Node<Airport>> Graph::BFS(string startPosition) {
+    std::queue<Node<Airport>> path;
+    std::queue<Node<Airport>> visiting;
+    Node<Airport> startingNode = nodes_[airportToIndexMap[startPosition]];
     startingNode.visited_ = true;
+    visiting.push(startingNode);
     path.push(startingNode);
 
     while(!visiting.empty()) {
-        Node currentNode = visiting.front();
-        cout<<currentNode.getData().name_<<endl;
+        Node<Airport> currentNode = visiting.front();
+        std::cout<<currentNode.getData().name_<<std::endl;
         visiting.pop();
-        for(int i = 0; i < currentNode.edges.size(); i++) {
-            int nodetoCheck = airportToIndexMap.at(currentNode.edges[i].nodeTwoCode);
-            if (!nodes[nodetoCheck].visited_) {
-                nodes[nodetoCheck].visited_ = true;
-                visiting.push(nodes[nodetoCheck]);
-                path.push(nodes[nodetoCheck]);
+        vector<vector<double>> currentList = adjacencyMatrix_[airportToIndexMap[currentNode.getData().airportCode_]];
+        for(int i = 0; i < currentList.size(); i++) {
+            if (!nodes_[i].visited_) {
+                if (currentList[i].size() > 0) {
+                    nodes_[i].visited_ = true;
+                    visiting.push(nodes_[i]);
+                    path.push(nodes_[i]);
+                }
             }
         }
     }
     return path;
+}
+
+list<Node<Airports>> DijkstraAlgo(string startPosition) {
+  return NULL;
 }
