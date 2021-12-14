@@ -43,7 +43,7 @@ We accomplished to answer our leading question because we were able to find the 
 
 
 
-![alt text](https://github.com/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png?raw=true)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png)
 
 
 ​
