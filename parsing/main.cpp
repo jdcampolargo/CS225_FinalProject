@@ -12,6 +12,7 @@ using std::cout;
 using std::endl;
 
 int main() {
+    cout << "\nSetting up program..." << endl;
     Parser parser = Parser();
     vector<Node> nodesList;
     vector<Edge> edgesList;
@@ -21,11 +22,20 @@ int main() {
     Graph graph(nodesList, edgesList);
     string source;
     string destination;
-    int option;
 
+    PageRank* pr = new PageRank(10, graph);
+    pr->updateAdjMatrix(0.85);
+    vector<pair<string, double>> ranks = pr->calculateRank(100);
+    pr->getMostPopularAirports(pr->pr_);
+
+    int option = -1;
+
+    cout<<"Enter 0 to quit"<<endl;
     cout<<"Enter 1 for finding shortest route"<<endl;
     cout<<"Enter 2 for shortest path to nearest popular airport"<<endl;
 
+    while (option != 0) {
+    cout << "Option #: ";
     cin >> option; 
 
     if (option == 1) {
@@ -48,10 +58,6 @@ int main() {
         cin >> source; 
         cout << "Performing calculations..." << endl;
 
-        PageRank* pr = new PageRank(10, graph);
-        pr->updateAdjMatrix(0.85);
-        vector<pair<string, double>> ranks = pr->calculateRank(100);
-        pr->getMostPopularAirports(pr->pr_);
         for (int i = 0; i < pr->mostPopularAirports.size(); i++) {
             Dijkstra dijkstra = Dijkstra(graph, source, pr->mostPopularAirports[i]);
             if (dijkstra.path_distance < shortest) {
@@ -64,7 +70,6 @@ int main() {
             cout<<graph.nodes_[graph.airportToIndexMap[part]].getData().name_<<endl;
         }
     }
-
-    
+}    
     return 0;
 }
