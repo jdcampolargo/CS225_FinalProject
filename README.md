@@ -8,29 +8,40 @@ Final project for jcampo37-ahuert30-psalin2-samuild2
 Given an OpenFlights large dataset of airplane airports and routes, can we find the shortest route from any airport, to its closest major airport?
 
 
+## Projects Goals
+* Set up project for Compilation​
+* Store Open Flights data files into CSV format​
+* Filter through data and removing faulty datapoints​
+* Create Graph with airports as nodes and routes as edges​
+* Complete BFS​
+* Complete PageRank Algorithm​
+* Complete Dijkstra's Algorithm
+
+
 ### Built With
 
 * C++
 
 
-# Project Structure
+## Project Structure
 The project structure is created to maximize modularity, increase compartmentalization, and make use of tools through CMake. Each sub-project of the overall project has its own folder, wherein each contains its own test, main methods, CMake files, and header files, thus increasing modularity of the overall project. Thus, each sub-project can actually stand alone on its own, and we add them here together much like applications rather than a hard-stuck part of the project. An example project structure is shown below for better visualization of the structure:
 ```
 project/
-> Final_Project/
+> parsing/
     > include/
         - ...header files
     > src/
         - ...src files
     - main.cpp
     - CMakeLists.txt
+> bfs/
     |-- ...
 ```
 
 This is a very similar structure as all other large open-source code bases like OpenCV as it allows maximum modularity and stand-alone applications.
 
 
-# First Time
+## First Time
 We will refer to the home project directory as `project/`. If this is your first time with the project and you are unfamiliar with the running scripts, then please execute the following in your command line (Note you must type in the stuff after the dollar sign. The stuff before the `$` symbol denotes the current filepath):
 
 `$ cd project/`
@@ -44,12 +55,13 @@ This will run the included script that runs the main method with default argumen
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-# Building Files
+## Building Files
 We decided to use CMake in this project due to its usefulness in helping us create Makefiles through a list of well-defined macros. The following command will bake the project (Build & Make). Run these in your local terminal. Note, please consider doing all of this on EWS as we assume tools on EWS (like CMake3 etc.).
 
 `project$ ./bake.sh`
 
-# Running Main, Tests
+## Running Main, Tests
+
 ## Main
 To run main or tests, you can just execute the main script like so:
 
@@ -89,7 +101,8 @@ Our tests cover the functionality of
 * the Pagerank algorithm
 * Djikstra's algorithm
 
-
+## Results
+We accomplished our goal because we were able to find the shortest route from any starting airport to the wanted destination. By inputting the code of our starting airport and the code of our destination airport and the graph where all our nodes are stored, we managed to traverse the graph and find the shortest most optimal path to take from our starting point to our destination. Given the list of most popular airports provided by the PageRank algorithm, we were able to identify the closest major airport from the starting airport as well.
 
 
 <!-- CONTACT -->
