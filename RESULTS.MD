@@ -22,6 +22,13 @@ You will have the following options:
 * Enter 1 for finding shortest route
 * Enter 2 for shortest path to nearest popular airport
 
+
+
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp2.png)
+from Chicago O'hare to Sofia Bulgaria
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp3.png)
+
   
 ## Discoveries
 Throughout this project, we made interesting discoveries on both the dataset we chose to work with and on algorithm implementations in general.  
