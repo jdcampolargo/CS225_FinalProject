@@ -8,6 +8,16 @@ Final project for jcampo37-ahuert30-psalin2-samuild2
 Given an OpenFlights large dataset of airplane airports and routes, can we find the shortest route from any airport, to its closest major airport?
 
 
+## Projects Goals
+* Set up project for Compilation​
+* Store Open Flights data files into CSV format​
+* Filter through data and removing faulty datapoints​
+* Create Graph with airports as nodes and routes as edges​
+* Complete BFS​
+* Complete PageRank Algorithm​
+* Complete Dijkstra's Algorithm
+
+
 ### Built With
 
 * C++
