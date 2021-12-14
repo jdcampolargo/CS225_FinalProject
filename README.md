@@ -86,10 +86,10 @@ To run main or tests, you can just execute the main script like so:
 #Enter the project foler by running `cd Final Project`
 #Followed by `./main-final_project` to run the program
 
-#You will have the following options: 
-*"Enter 0 to quit"
-*"Enter 1 for finding shortest route"
-*"Enter 2 for shortest path to nearest popular airport"
+You will have the following options: 
+* Enter 0 to quit
+* Enter 1 for finding shortest route
+* Enter 2 for shortest path to nearest popular airport
 
 `project$ ./main.sh`
 
