@@ -4,33 +4,36 @@
 #include "../airport/include/airport.h"
 #include <vector>
 #include <map>
-#include <queue>
+#include <cmath>
+#include <exception>
+#include <iostream>
+#include <vector>
 #include <string>
+#include <utility>
 
 using std::vector;
 using std::cout;
 using std::endl;
 using std::string;
+using std::pair;
 
 class PageRank {
     public:
     PageRank(size_t max, Graph& graph);
     void updateAdjMatrix(double damping);
-    vector<double> createInitialVector();
-    vector<double> calculateRank(size_t iterations, bool normalize);
-    void popularAirports(size_t topNum);
-    void printAdjMatrix();
-    void printResults();
+    void createInitialVector();
+    vector<pair<string, double>> calculateRank(size_t iterations);
+    void popularAirportHelper(vector<pair<string, double>>& pairVector);
+    void getMostPopularAirports(vector<pair<string, double>> list);
+    void printMostPopularAirports();
 
     unsigned dimension_;
     double damping_factor_;
-    unsigned long max_iterations_;
     size_t max_airports_;
     vector<vector<double>> adjacency_matrix_; 
     vector<string> airport_codes_;
-    vector<double> initial_;
-
-    vector<string> popular_airports_;
-    vector<double> pr_;
+    vector<pair<string, double>> initial_;
+    vector<pair<string, double>> pr_;
+    vector<string> mostPopularAirports;
 
 };
