@@ -12,7 +12,15 @@ Our test cases are complete proof that our algorithms function as intended.
 Our smaller test cases individually consider each edge case, isolating any potential issues.  
 We also ran tests to confirm that our algorithms can handle the total number of airports of about 15,000 airports and almost 40,000 routes data set. 
 
-One can view these results under the parsing folder by running ./main-parsing. There, you will be prompted with our interactive console.
+One can view these results in the following way:
+
+Enter the project folder by running `cd Final Project`
+Followed by `./main-final_project` to run the program
+
+You will have the following options: 
+* Enter 0 to quit
+* Enter 1 for finding shortest route
+* Enter 2 for shortest path to nearest popular airport
 
   
 ## Discoveries
