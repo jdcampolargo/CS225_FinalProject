@@ -104,6 +104,11 @@ I have made a `test.sh` script that runs all the tests in the subdirectories. Yo
 
 `project$ ./test.sh`
 
-and you should see the success on all parts.
+Our tests cover the functionality of
+* constructing the node, edge, and airport classes 
+* constructing a graph
+* the BFS traversal
+* the Pagerank algorithm
+* Djikstra's algorithm
 
 <p align="right">(<a href="#top">back to top</a>)</p>
