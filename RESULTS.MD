@@ -42,7 +42,8 @@ We accomplished to answer our leading question because we were able to find the 
 
 
 
-![Alt text](relative/path/to/fp1.png?raw=true "Title")
+
+![alt text](https://github.com/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png?raw=true)
 
 
 ​
