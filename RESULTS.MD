@@ -44,6 +44,11 @@ We accomplished to answer our leading question because we were able to find the 
 
 
 ![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png)
-
-
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp2.png)
+from Chicago O'hare to Sofia Bulgaria
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp3.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp4.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp5.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp6.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp7.png)
 ​
