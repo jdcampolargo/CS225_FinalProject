@@ -22,11 +22,16 @@ You will have the following options:
 * Enter 1 for finding shortest route
 * Enter 2 for shortest path to nearest popular airport
 
-
-
 ![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png)
 ![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp2.png)
 ![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp3.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp4.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp5.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp6.png)
+![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp7.png)
+​
+
+
 
   
 ## Discoveries
@@ -46,15 +51,3 @@ Given our question of given an OpenFlights large dataset of airplane airports an
 ​
 We accomplished to answer our leading question because we were able to find the shortest route from any starting airport to the wanted destination. By inputting the code of our starting airport and the code of our destination airport and the graph where all our nodes are stored, we managed to traverse the graph and find the shortest most optimal path to take from our starting point to our destination. Given the list of most popular airports provided by the PageRank algorithm, we were able to identify the closest major airport from the starting airport as well.
 
-
-
-
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp1.png)
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp2.png)
-from Chicago O'hare to Sofia Bulgaria
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp3.png)
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp4.png)
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp5.png)
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp6.png)
-![alt text](https://github-dev.cs.illinois.edu/cs225-fa21/jcampo37-ahuert30-psalin2-samuild2/blob/main/fp7.png)
-​
