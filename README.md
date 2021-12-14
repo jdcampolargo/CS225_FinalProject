@@ -8,16 +8,6 @@ Final project for jcampo37-ahuert30-psalin2-samuild2
 Given an OpenFlights large dataset of airplane airports and routes, can we find the shortest route from any airport, to its closest major airport?
 
 
-## Projects Goals
-* Set up project for Compilation​
-* Store Open Flights data files into CSV format​
-* Filter through data and removing faulty datapoints​
-* Create Graph with airports as nodes and routes as edges​
-* Complete BFS​
-* Complete PageRank Algorithm​
-* Complete Dijkstra's Algorithm
-
-
 ### Built With
 
 * C++
@@ -27,14 +17,13 @@ Given an OpenFlights large dataset of airplane airports and routes, can we find 
 The project structure is created to maximize modularity, increase compartmentalization, and make use of tools through CMake. Each sub-project of the overall project has its own folder, wherein each contains its own test, main methods, CMake files, and header files, thus increasing modularity of the overall project. Thus, each sub-project can actually stand alone on its own, and we add them here together much like applications rather than a hard-stuck part of the project. An example project structure is shown below for better visualization of the structure:
 ```
 project/
-> parsing/
+> Final_Project/
     > include/
         - ...header files
     > src/
         - ...src files
     - main.cpp
     - CMakeLists.txt
-> bfs/
     |-- ...
 ```
 
