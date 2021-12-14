@@ -64,7 +64,7 @@ We decided to use CMake in this project due to its usefulness in helping us crea
 ## Main
 To run main or tests, you can just execute the main script like so:
 
-Enter the project folder by running `cd Final Project`
+Enter the project folder by running `cd Final_Project`
 Followed by `./main-final_project` to run the program
 
 You will have the following options: 
