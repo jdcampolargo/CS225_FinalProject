@@ -83,8 +83,16 @@ We decided to use CMake in this project due to its usefulness in helping us crea
 # Running Main, Tests
 ## Main
 To run main or tests, you can just execute the main script like so:
+Enter the project foler by running `cd Final Project`
+Followed by `./main-final_project` to run the program
+
+You will have the following options: 
+"Enter 0 to quit"
+"Enter 1 for finding shortest route"
+"Enter 2 for shortest path to nearest popular airport"
 
 `project$ ./main.sh`
+
 <!-- 
 The main method also includes some additional input if you would like to play around with the inputs. You can run `./main -h` or `./main --help` for more information on the usage type. The result should print something like:
 
