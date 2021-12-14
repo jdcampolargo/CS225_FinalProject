@@ -14,7 +14,7 @@ We also ran tests to confirm that our algorithms can handle the total number of 
 
 One can view these results in the following way:
 
-Enter the project folder by running `cd Final Project`
+Enter the project folder by running `cd_Final Project`
 Followed by `./main-final_project` to run the program
 
 You will have the following options: 
