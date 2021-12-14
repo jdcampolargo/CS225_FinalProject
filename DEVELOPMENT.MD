@@ -15,3 +15,11 @@ On Friday, parsing was completed and graphing the following morning. On Saturday
 
 
 12/07/2021
+
+Several improvements on the graph implementation had to be made in order to account for Airports that are not in the Airports data set, but in the Routes Data set. Furthermore, We worked as a group to implement BFS but at first, we came across an issue as it seemed that the algorithm was not traversing all of the nodes. However we later confirmed that some of the airport nodes simply did not have any connections as the Routes data set did not include those airports.
+
+12/13/2021
+
+Dijkstra's Algorithm was implemented accordingly for our purposes and was able to, in acceptable run-time, find the shortest distance from one airport to another. Furthermore, Pagerank Algorithm was implemented and is sucessfully able to find the most popular airports in our dataset. These two algorithms can work together to find the closest major airport from a user's location.
+
+Testing for graph implementation, BFS, Dijkstra's algorithm, and Pagerank Algorithm has been conducted as well.
