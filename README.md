@@ -5,43 +5,13 @@ Final project for jcampo37-ahuert30-psalin2-samuild2
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+Given an OpenFlights large dataset of airplane airports and routes, can we find the shortest route from any airport, to its closest major airport?
 
 
 ### Built With
 
 * C++
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- CONTACT -->
-## Contact
-
-- Juan David Campolargo - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo)
-- Alan Huerta - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
-- Patricia Salinas - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
-- Samuil Donchev - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 # Project Structure
 The project structure is created to maximize modularity, increase compartmentalization, and make use of tools through CMake. Each sub-project of the overall project has its own folder, wherein each contains its own test, main methods, CMake files, and header files, thus increasing modularity of the overall project. Thus, each sub-project can actually stand alone on its own, and we add them here together much like applications rather than a hard-stuck part of the project. An example project structure is shown below for better visualization of the structure:
@@ -118,5 +88,18 @@ Our tests cover the functionality of
 * the BFS traversal
 * the Pagerank algorithm
 * Djikstra's algorithm
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+- Juan David Campolargo - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo)
+- Alan Huerta - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
+- Patricia Salinas - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
+- Samuil Donchev - [Twitter](https://twitter.com/jdcampolargo) - [LinkedIn](https://linkedin.com/in/jdcampolargo) 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
